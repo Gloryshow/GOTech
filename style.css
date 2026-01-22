@@ -1,0 +1,439 @@
+/* ============================================
+   PROFESSIONAL GOTECH STYLESHEET
+   ============================================ */
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.5px;
+}
+
+body {
+  scroll-behavior: smooth;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.nav-link {
+  position: relative;
+  color: #666 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.95) 0%, rgba(11, 94, 215, 0.95) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,193,7,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero .btn {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-primary {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #333;
+}
+
+.hero .btn-primary:hover {
+  background-color: #ffb300;
+  border-color: #ffb300;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+}
+
+.hero .btn-outline-primary {
+  color: white;
+  border-color: white;
+}
+
+.hero .btn-outline-primary:hover {
+  background-color: white;
+  border-color: white;
+  color: #0d6efd;
+  transform: translateY(-2px);
+}
+
+/* Services Section */
+#services {
+  padding: 80px 0;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border: none;
+  background: white;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* About Section */
+#about {
+  padding: 80px 0;
+}
+
+.feature-box {
+  transition: all 0.3s ease;
+  border-left: 4px solid #0d6efd;
+}
+
+.feature-box:hover {
+  background-color: white !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-left-color: #ffc107;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 80px 0;
+}
+
+.portfolio-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio-img {
+  transition: all 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-img {
+  transform: scale(1.05);
+}
+
+/* Pricing Section */
+#pricing {
+  padding: 80px 0;
+}
+
+.pricing-card {
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(13, 110, 253, 0.15) !important;
+}
+
+.pricing-card .btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 80px 0;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.testimonial-card .fa-star {
+  font-size: 1.1rem;
+}
+
+/* Contact Form Styling */
+#contact {
+  padding: 80px 0;
+}
+
+.contact-option-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #e9ecef !important;
+  background-color: #f8f9fa;
+}
+
+.contact-option-card:hover {
+  border-color: #0d6efd !important;
+  background-color: #f0f6ff;
+  transform: translateY(-5px);
+}
+
+.send-via-btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.send-via-btn:hover {
+  transform: translateY(-2px);
+}
+
+.form-control {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* CTA Section */
+.bg-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%) !important;
+}
+
+.bg-primary .btn-light {
+  transition: all 0.3s ease;
+}
+
+.bg-primary .btn-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #0d6efd !important;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .d-flex.gap-3 {
+    flex-direction: column;
+  }
+
+  .btn-lg {
+    padding: 10px 20px;
+  }
+}
+
+/* Utility Classes */
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Scroll to Top Button Styles */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+.btn-scroll-top:hover {
+  background: #0b5ed7;
+  transform: translateY(-5px);
+}
+
+.btn-scroll-top.show {
+  display: flex;
+}
+
+/* Tech Stack Section */
+#tech-stack {
+  padding: 80px 0;
+}
+
+.tech-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+  background-color: white !important;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tech-badges .badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 10px;
+}
+
+/* Loading State */
+.is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
