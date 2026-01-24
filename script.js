@@ -121,22 +121,42 @@ function sendViaEmail() {
   const phone = document.getElementById('phone').value;
   const message = document.getElementById('message').value;
 
-  // Create mailto link with all details
+  // Create email message format
   const subject = `New Project Inquiry from ${name}`;
   const body = `Name: ${name}\nEmail: ${email}\nPhone/WhatsApp: ${phone}\n\nMessage:\n${message}`;
   
-  // Your email address
-  const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Detect if user is on mobile/smartphone
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  // Show success message
-  showSuccess('Opening your email client...');
-  
-  // Create and click a temporary link
-  setTimeout(() => {
-    const link = document.createElement('a');
-    link.href = mailtoLink;
-    link.click();
-  }, 500);
+  if (isMobile) {
+    // On mobile: Open Gmail or email client directly
+    const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showSuccess('Opening your email client...');
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+    }, 500);
+  } else {
+    // On desktop: Copy to clipboard first, then offer mailto fallback
+    const fullMessage = `Subject: ${subject}\n\n${body}`;
+    navigator.clipboard.writeText(fullMessage).then(() => {
+      showSuccess('Message copied to clipboard! Send to: omotoshoglory90@gmail.com');
+      
+      // Also try to open email client as fallback
+      const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+      }, 1500);
+    }).catch(err => {
+      // Fallback if clipboard fails
+      showSuccess('Opening your email client...');
+      const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = mailtoLink;
+        link.click();
+      }, 500);
+    });
+  }
 }
 
 // Send via WhatsApp
@@ -150,7 +170,7 @@ function sendViaWhatsApp() {
   const whatsappMessage = `Hello! I'm ${name}\n\nEmail: ${userEmail}\nPhone: ${phone}\n\nProject Details:\n${message}`;
   
   // Your WhatsApp number
-  const whatsappNumber = '1309256565601';
+  const whatsappNumber = '13092565601';
   
   // Create WhatsApp link
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;

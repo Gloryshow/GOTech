@@ -97,6 +97,7 @@ body {
   font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto;
+  color: white !important;
   animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
@@ -158,9 +159,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   margin: 0 auto;
   transition: all 0.3s ease;
+}
+
+.service-icon i {
+  color: white !important;
 }
 
 .service-card:hover .service-icon {
@@ -312,8 +316,13 @@ footer {
   border-top: 1px solid #333;
 }
 
+footer .text-muted {
+  color: #a0a0a0 !important;
+}
+
 footer a {
   transition: all 0.3s ease;
+  color: #a0a0a0 !important;
 }
 
 footer a:hover {
@@ -335,16 +344,21 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .hero > .container {
+    min-height: auto !important;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
 
   .hero p {
     font-size: 1rem;
-  }
-
-  .hero {
-    padding-top: 60px;
   }
 
   .d-flex.gap-3 {

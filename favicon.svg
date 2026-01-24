@@ -1,0 +1,20 @@
+<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue background circle -->
+  <circle cx="90" cy="90" r="85" fill="#0052a3"/>
+  
+  <!-- White G shape -->
+  <g fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- G curve -->
+    <path d="M 140 90 A 50 50 0 0 0 90 40 A 50 50 0 0 0 40 90 A 50 50 0 0 0 90 140 A 50 50 0 0 0 135 120"/>
+    <!-- G horizontal line -->
+    <line x1="90" y1="90" x2="135" y2="90"/>
+  </g>
+  
+  <!-- Gold circuit accents -->
+  <g stroke="#ffc107" stroke-width="3" fill="none" stroke-linecap="round">
+    <line x1="120" y1="45" x2="145" y2="45"/>
+    <circle cx="150" cy="45" r="3.5" fill="#ffc107"/>
+    <path d="M 150 45 L 160 35"/>
+    <circle cx="165" cy="30" r="2.5" fill="#ffc107"/>
+  </g>
+</svg>

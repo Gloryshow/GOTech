@@ -1,0 +1,47 @@
+<svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5ba8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0052a3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffc107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9800;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Blue circular G -->
+  <g>
+    <!-- Main blue G shape -->
+    <path d="M 180 175 C 180 90 135 40 80 40 C 35 40 10 75 10 130 C 10 185 35 220 80 220 C 110 220 138 205 150 180 L 120 180 L 120 140 L 180 140 C 180 155 180 165 180 175 Z" fill="url(#blueGrad)"/>
+    
+    <!-- 3D depth shadow on left -->
+    <path d="M 10 130 C 10 175 35 210 70 220 L 70 240 C 30 230 5 195 5 130 C 5 75 30 40 75 40 L 75 20 C 30 20 0 55 0 130 Z" fill="#003d7a" opacity="0.6"/>
+  </g>
+  
+  <!-- Gold/Orange G overlaid (forming the 7-like shape) -->
+  <g>
+    <path d="M 200 175 C 200 95 165 50 120 50 C 80 50 55 85 55 135 C 55 185 80 215 120 215 C 145 215 168 205 178 182 L 155 182 L 155 148 L 205 148 C 205 160 205 168 205 175 Z" fill="url(#goldGrad)" opacity="0.9"/>
+  </g>
+  
+  <!-- Circuit lines on top of G -->
+  <g stroke="#ffc107" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top circuit line -->
+    <line x1="100" y1="45" x2="145" y2="45"/>
+    <circle cx="155" cy="45" r="4" fill="#ffc107"/>
+    
+    <!-- Angled line -->
+    <line x1="155" y1="45" x2="175" y2="25"/>
+    <circle cx="180" cy="20" r="3" fill="#ffc107"/>
+    
+    <!-- Right vertical line -->
+    <line x1="175" y1="25" x2="185" y2="50"/>
+    <circle cx="188" cy="60" r="3" fill="#ffc107"/>
+  </g>
+  
+  <!-- "GO" text in Blue -->
+  <text x="260" y="220" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="bold" fill="url(#blueGrad)" letter-spacing="5">GO</text>
+  
+  <!-- "Tech" text in Gold/Orange -->
+  <text x="570" y="220" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="bold" fill="url(#goldGrad)" letter-spacing="3">Tech</text>
+</svg>
