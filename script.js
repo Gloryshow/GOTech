@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   initializeNavbar();
   initializeContactForm();
+  initializeGetQuoteButtons();
   initializeScrollAnimations();
   initializeScrollToTop();
 });
@@ -34,6 +35,25 @@ function initializeNavbar() {
       if (navbarCollapse.classList.contains('show')) {
         const bsCollapse = new bootstrap.Collapse(navbarCollapse);
         bsCollapse.hide();
+      }
+    });
+  });
+}
+
+// ============================================
+// GET QUOTE BUTTONS FUNCTIONALITY
+// ============================================
+
+function initializeGetQuoteButtons() {
+  const quoteButtons = document.querySelectorAll('.pricing-card .btn');
+  
+  quoteButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Scroll to contact section
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
@@ -130,7 +150,7 @@ function sendViaEmail() {
   
   if (isMobile) {
     // On mobile: Open Gmail or email client directly
-    const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:omoglo567@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     showSuccess('Opening your email client...');
     setTimeout(() => {
       window.location.href = mailtoLink;
@@ -139,17 +159,17 @@ function sendViaEmail() {
     // On desktop: Copy to clipboard first, then offer mailto fallback
     const fullMessage = `Subject: ${subject}\n\n${body}`;
     navigator.clipboard.writeText(fullMessage).then(() => {
-      showSuccess('Message copied to clipboard! Send to: omotoshoglory90@gmail.com');
+      showSuccess('Message copied to clipboard! Send to: omoglo567@gmail.com');
       
       // Also try to open email client as fallback
-      const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:omoglo567@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setTimeout(() => {
         window.location.href = mailtoLink;
       }, 1500);
     }).catch(err => {
       // Fallback if clipboard fails
       showSuccess('Opening your email client...');
-      const mailtoLink = `mailto:omotoshoglory90@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:omoglo567@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setTimeout(() => {
         const link = document.createElement('a');
         link.href = mailtoLink;

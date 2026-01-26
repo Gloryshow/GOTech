@@ -368,6 +368,51 @@ footer a:hover {
   .btn-lg {
     padding: 10px 20px;
   }
+
+  /* Footer Responsive */
+  footer .row {
+    flex-direction: column;
+  }
+
+  footer .col-md-4 {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  footer .col-md-4:last-child {
+    border-bottom: none;
+  }
+
+  footer .col-md-6 {
+    width: 100% !important;
+  }
+
+  footer .text-md-end {
+    text-align: center !important;
+    margin-top: 15px;
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  footer h6 {
+    text-align: center;
+  }
+
+  footer ul {
+    text-align: center;
+  }
+
+  footer a {
+    display: inline-block;
+    margin-right: 15px !important;
+  }
+
+  footer a:last-child {
+    margin-right: 0 !important;
+  }
 }
 
 /* Utility Classes */
@@ -450,4 +495,52 @@ footer a:hover {
 .is-loading {
   opacity: 0.7;
   pointer-events: none;
+}
+
+/* Carousel Styling */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px !important;
+  height: 50px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: rgba(13, 110, 253, 0.7) !important;
+  border-radius: 50%;
+  opacity: 1 !important;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: 10px !important;
+}
+
+.carousel-control-next {
+  right: 10px !important;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(13, 110, 253, 1) !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px !important;
+  height: 20px !important;
+  filter: brightness(0) invert(1);
+}
+
+.carousel-indicators {
+  bottom: -40px !important;
+}
+
+.carousel-indicators button {
+  background-color: #0d6efd !important;
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.carousel-indicators button.active {
+  background-color: #0b5ed7 !important;
 }
