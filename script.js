@@ -102,26 +102,11 @@ function initializeContactForm() {
 // Validate contact form
 function validateForm() {
   const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
   const message = document.getElementById('message').value.trim();
 
   // Check if name is not empty
   if (!name) {
     showError('Please enter your name');
-    return false;
-  }
-
-  // Check if email is valid
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    showError('Please enter a valid email address');
-    return false;
-  }
-
-  // Check if phone is provided
-  if (!phone) {
-    showError('Please enter your phone/WhatsApp number');
     return false;
   }
 
@@ -137,13 +122,11 @@ function validateForm() {
 // Send via Email
 function sendViaEmail() {
   const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
   const message = document.getElementById('message').value;
 
   // Create email message format
   const subject = `New Project Inquiry from ${name}`;
-  const body = `Name: ${name}\nEmail: ${email}\nPhone/WhatsApp: ${phone}\n\nMessage:\n${message}`;
+  const body = `Name: ${name}\n\nMessage:\n${message}`;
   
   // Detect if user is on mobile/smartphone
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -182,12 +165,10 @@ function sendViaEmail() {
 // Send via WhatsApp
 function sendViaWhatsApp() {
   const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
   const message = document.getElementById('message').value;
-  const userEmail = document.getElementById('email').value;
 
   // Create WhatsApp message
-  const whatsappMessage = `Hello! I'm ${name}\n\nEmail: ${userEmail}\nPhone: ${phone}\n\nProject Details:\n${message}`;
+  const whatsappMessage = `Hello! I'm ${name}\n\nProject Details:\n${message}`;
   
   // Your WhatsApp number
   const whatsappNumber = '13092565601';
