@@ -359,14 +359,9 @@ function initializeFlashSaleCountdown() {
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) return;
 
-  // Get or set expiration time (persists across page reloads)
-  let expirationTime = parseInt(localStorage.getItem('flashSaleExpiration')) || 0;
-  
-  if (expirationTime === 0 || new Date().getTime() > expirationTime) {
-    // First time or expired, set new 24 hour timer
-    expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-    localStorage.setItem('flashSaleExpiration', expirationTime);
-  }
+  // Fixed expiration time: January 29, 2026 at 2:00 PM WAT (13:00 UTC)
+  // All users see the same countdown regardless of timezone
+  const expirationTime = new Date('2026-01-29T13:00:00Z').getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
