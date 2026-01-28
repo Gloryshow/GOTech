@@ -359,9 +359,9 @@ function initializeFlashSaleCountdown() {
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) return;
 
-  // Fixed expiration time: January 29, 2026 at 2:00 PM WAT (13:00 UTC)
+  // Fixed expiration time: January 29, 2026 at 1:56 PM WAT (12:56 UTC)
   // All users see the same countdown regardless of timezone
-  const expirationTime = new Date('2026-01-29T13:00:00Z').getTime();
+  const expirationTime = new Date('2026-01-29T12:56:00Z').getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
