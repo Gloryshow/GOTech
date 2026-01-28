@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeGetQuoteButtons();
   initializeScrollAnimations();
   initializeScrollToTop();
+  initializeFlashSaleCountdown();
 });
 
 // ============================================
@@ -348,6 +349,49 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
   });
+}
+
+// ============================================
+// FLASH SALE COUNTDOWN TIMER
+// ============================================
+
+function initializeFlashSaleCountdown() {
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) return;
+
+  // Get or set expiration time (persists across page reloads)
+  let expirationTime = parseInt(localStorage.getItem('flashSaleExpiration')) || 0;
+  
+  if (expirationTime === 0 || new Date().getTime() > expirationTime) {
+    // First time or expired, set new 24 hour timer
+    expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+    localStorage.setItem('flashSaleExpiration', expirationTime);
+  }
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = expirationTime - now;
+
+    if (timeLeft <= 0) {
+      countdownElement.textContent = 'EXPIRED';
+      document.querySelector('.flash-sale-card')?.classList.add('opacity-50');
+      const btn = document.querySelector('.flash-sale-card .btn');
+      if (btn) btn.disabled = true;
+      return;
+    }
+
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    countdownElement.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
+
+  // Update immediately on first load
+  updateCountdown();
+  
+  // Update every second
+  setInterval(updateCountdown, 1000);
 }
 
 // ============================================

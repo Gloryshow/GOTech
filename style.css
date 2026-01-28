@@ -224,11 +224,42 @@ body {
   box-shadow: 0 20px 50px rgba(13, 110, 253, 0.15) !important;
 }
 
+/* Flash Sale Card Styling */
+.flash-sale-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%) !important;
+  border: 2px solid #c41e3a !important;
+  transform: scale(1.02);
+}
+
+.flash-sale-card:hover {
+  transform: scale(1.06) translateY(-10px);
+  box-shadow: 0 20px 50px rgba(196, 30, 58, 0.3) !important;
+}
+
+.flash-sale-badge {
+  z-index: 10;
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
 .pricing-card .btn {
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 50px;
   transition: all 0.3s ease;
+}
+
+.flash-sale-card .btn:hover {
+  background-color: #a01730 !important;
+  transform: scale(1.05);
 }
 
 /* Testimonials Section */
