@@ -172,7 +172,7 @@ function sendViaWhatsApp() {
   const whatsappMessage = `Hello! I'm ${name}\n\nProject Details:\n${message}`;
   
   // Your WhatsApp number
-  const whatsappNumber = '13092565601';
+  const whatsappNumber = '2347066304322';
   
   // Create WhatsApp link
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
